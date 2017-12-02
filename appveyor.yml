@@ -137,13 +137,18 @@ install:
   # batch commands start from cmd:
   - cmd: echo This is batch again
   - cmd: set MY_VAR=12345
-  - ls -lR /
-  - dir C:\mingw-w64
+  - dir C:\MinGW
+  - dir C:\MinGW\bin
+  - dir C:\MinGW\msys\1.0
+  - dir C:\mingw-w64\x86_64-6.3.0-posix-seh-rt_v5-rev1
+  - dir C:\cygwin
+  - dir C:\cygwin64
+  - dir C:\msys64
   - git clone --depth 1 https://github.com/FarGroup/FarManager.git
   - set COMMON = \FarManager\plugins\common\unicode\
   - git clone -depth 1 https://github.com/trexinc/evil-programmers.git
   - cd evil-programmers/airbrush/src
-  - dir
+#  - dir
  
 
 # enable patching of AssemblyInfo.* files
