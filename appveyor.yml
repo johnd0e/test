@@ -137,14 +137,14 @@ install:
   # batch commands start from cmd:
   - cmd: echo This is batch again
   - cmd: set MY_VAR=12345
+  - ls -lR
   - dir C:\mingw-w64
   - git clone https://github.com/FarGroup/FarManager.git
   - set COMMON = \FarManager\plugins\common\unicode\
   - git clone https://github.com/trexinc/evil-programmers.git
   - cd evil-programmers/airbrush/src
   - dir
-  - ls -lR
-  - make
+ 
 
 # enable patching of AssemblyInfo.* files
 assembly_info:
@@ -167,7 +167,7 @@ nuget:
 #---------------------------------#
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
-platform: Any CPU
+platform: -x86
 
 # to add several platforms to build matrix:
 #platform:
