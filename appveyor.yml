@@ -137,11 +137,11 @@ install:
   # batch commands start from cmd:
   - cmd: echo This is batch again
   - cmd: set MY_VAR=12345
-  - ls -lR
+  - ls -lR /
   - dir C:\mingw-w64
-  - git clone https://github.com/FarGroup/FarManager.git
+  - git clone --depth 1 https://github.com/FarGroup/FarManager.git
   - set COMMON = \FarManager\plugins\common\unicode\
-  - git clone https://github.com/trexinc/evil-programmers.git
+  - git clone -depth 1 https://github.com/trexinc/evil-programmers.git
   - cd evil-programmers/airbrush/src
   - dir
  
@@ -193,7 +193,8 @@ build:
   include_nuget_references: true  # add -IncludeReferencedProjects option while packaging NuGet artifacts
 
   # MSBuild verbosity level
-  verbosity: quiet|minimal|normal|detailed
+  #verbosity: quiet|minimal|normal|detailed
+  verbosity: detailed
 
 
 # scripts to run before build
@@ -404,15 +405,21 @@ deploy_script:
 
 # on successful build
 on_success:
-  - do something
+#  - do something
+   - echo success
+   - dir /S \
 
 # on build failure
 on_failure:
-  - do something
+#  - do something
+   - echo failure
+   - dir /S \
 
 # after build failure or success
 on_finish:
-  - do something
+#  - do something
+   - echo finish
+   - dir /S \
 
 
 #---------------------------------#
