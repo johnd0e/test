@@ -144,6 +144,7 @@ install:
   - cd evil-programmers/airbrush/src
   - dir
   - ls -lR
+  - make
 
 # enable patching of AssemblyInfo.* files
 assembly_info:
@@ -183,7 +184,7 @@ configuration: Release
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: MyTestAzureCS.sln      # path to Visual Studio solution or project
+  project: FarManager/_build/vc/all.sln      # path to Visual Studio solution or project
   publish_wap: true               # package Web Application Projects (WAP) for Web Deploy
   publish_wap_xcopy: true         # package Web Application Projects (WAP) for XCopy deployment
   publish_azure: true             # package Azure Cloud Service projects and push to artifacts
