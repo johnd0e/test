@@ -412,19 +412,19 @@ deploy_script:
 on_success:
 #  - do something
    - echo success
-   - dir /S \
+#   - dir /S \
 
 # on build failure
 on_failure:
 #  - do something
    - echo failure
-   - dir /S \
+#   - dir /S \
 
 # after build failure or success
 on_finish:
 #  - do something
    - echo finish
-   - dir /S \
+#   - dir /S \
 
 
 #---------------------------------#
