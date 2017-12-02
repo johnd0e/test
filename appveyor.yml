@@ -110,7 +110,7 @@ environment:
 matrix:
   fast_finish: true     # set this flag to immediately finish build once one of the jobs fails.
   allow_failures:
-    - platform: x86
+    - platform: Win32
       configuration: Debug
     - platform: x64
       configuration: Release
@@ -172,7 +172,9 @@ nuget:
 #---------------------------------#
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
-platform: -x86
+platform:
+  - Win32
+  - x64
 
 # to add several platforms to build matrix:
 #platform:
@@ -349,7 +351,7 @@ deploy:
     skip_files: web.config
     on:
       branch: release
-      platform: x86
+      platform: x64
       configuration: debug
 
     # Deploying to Azure Cloud Service
