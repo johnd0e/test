@@ -146,7 +146,7 @@ install:
   - dir C:\msys64
   - git clone --depth 1 https://github.com/FarGroup/FarManager.git
   - set COMMON = \FarManager\plugins\common\unicode\
-  - git clone -depth 1 https://github.com/trexinc/evil-programmers.git
+  - git clone --depth 1 https://github.com/trexinc/evil-programmers.git
   - cd evil-programmers/airbrush/src
 #  - dir
  
