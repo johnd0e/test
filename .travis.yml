@@ -11,5 +11,6 @@ script:
   - mkdir deploy
   # Windows .exe
   - docker pull koalaman/winghc
-  - docker run --user="$UID" --rm -v "$PWD:/appdata" koalaman/winghc cuib
+  #- docker run --user="$UID" --rm -v "$PWD:/appdata" koalaman/winghc cuib
+  - docker run -v "$PWD:/appdata" koalaman/winghc cuib
   - docker run -v "$PWD:/appdata" koalaman/winghc cabal install pandoc -fembed_data_files
