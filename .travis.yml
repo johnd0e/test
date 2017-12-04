@@ -1,0 +1,15 @@
+#https://docs.travis-ci.com/user/docker/
+#https://github.com/koalaman/winghc
+#https://github.com/koalaman/shellcheck/blob/master/.travis.yml
+
+sudo: required
+
+services:
+  - docker
+
+script:
+  - mkdir deploy
+  # Windows .exe
+  - docker pull koalaman/winghc
+  - docker run --user="$UID" --rm -v "$PWD:/appdata" koalaman/winghc cuib
+  - docker run -v "$PWD:/appdata" koalaman/winghc cabal install pandoc -fembed_data_files
